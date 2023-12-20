@@ -249,6 +249,229 @@ object SumEvenNumbers {
   }
 }
 
+//17. Write a Program to print the all alphabets by using character Variable?
+object PrintAlphabets {
+  def main(args: Array[String]): Unit = {
+
+    for (ch <- 'A' to 'Z') {
+      print(s"$ch ")
+    }
+    println()
+    for (ch <- 'a' to 'z') {
+      print(s"$ch ")
+    }
+  }
+}
+
+//18. Write a program to find the average of 24,26,28,.....100.
+object AverageCalculator {
+  def main(args: Array[String]): Unit = {
+
+    val start = 24
+    val end = 100
+
+    val count = (start to end by 2).length
+    val sum = (start to end by 2).sum
+    val average = sum.toDouble / count
+
+    println(s"The average of numbers from $start to $end is: $average")
+  }
+}
+
+//19. Write programs to sum of the following Series. 52 + 62 + 72
+//+..........+1022.
+object SumofSeries{
+  def main(args: Array[String]) : Unit = {
+    val start = 52
+    val end = 1022
+
+    val sum = (start to end).sum
+    println(s"The sum of the following series from $start to $end is: $sum")
+  }
+}
+
+//20. Write a program to print A, B alternatively for 100 times. Ex: (A, B, A, B,
+//A,B...)
+object Alternatives{
+  def main(args: Array[String]): Unit = {
+    for (i <- 1 to 100) {
+      print("A, B")
+      if (i < 100) {
+        print(", ")
+      }
+    }
+  }
+}
+
+//21. Write a program to print the series : 10@9,9@8,8@7.......-5@-6
+object PrintSeries {
+  def main(args: Array[String]): Unit = {
+    for (i <- 10 to -5 by -1) {
+      print(s"$i@${i - 1}")
+      if (i > -5) {
+        print(",")
+      }
+    }
+  }
+}
+
+//22. Write programs to print the following series. 100,200,300........10000
+object Seriesof100{
+  def main(args: Array[String]): Unit= {
+    for(i <- 100 to 10000 by 100){
+      print(s"$i")
+      if(i<10000){
+        print(",")
+      }
+    }
+  }
+}
+
+//23. Write programs to print the following series. 5^2, 7^2,9^2.....25^2
+object SeriesofCaret{
+  def main(args: Array[String]): Unit= {
+    for(i <- 5 to 25 by 2){
+      print(s"$i^2")
+
+      if(i<25){
+        print(", ")
+      }
+    }
+  }
+}
+
+//24. Write programs to print the following series. 5,10,5,10,5,10,5 for 7 times
+object RepeatSeries{
+  def main(args: Array[String]): Unit = {
+    for(i <- 1 to 7){
+      print("5,10")
+
+      if(i<7){
+        print(",")
+      }
+    }
+  }
+}
+
+//25. Write programs to print the following series. 5*4,5*3,5*2,......5*(-12)
+//(Print in two ways – patter & multiplied value)
+object SeriesMultiplied{
+  def main(args: Array[String]): Unit = {
+
+   print("Pattern: ")
+    for(i <- 4 to (-12) by -1){
+      print(s"5*$i")
+
+      if(i > -12){
+        print(",")
+      }
+    }
+    print("\n")
+
+    print("Multiplied Values: ")
+    for(i <- 4 to (-12) by -1){
+      print(5 * i)
+
+      if(i > -12){
+        print(",")
+      }
+    }
+    println()
+  }
+}
+
+//26. Write programs to print the following series.
+//1,even,3,even,5,even,.......35,even
+object NumbersandEven{
+  def main(args: Array[String]): Unit ={
+    for(i <- 1 to 35 by 2){
+      if(i % 2 != 0){
+        print(s"$i,even")
+      }
+      if(i < 35){
+        print(",")
+      }
+    }
+  }
+}
+
+//27. Write programs to print the following series. 1,2,factor of three,4,5,factor
+//of three, 7,8,factor of three,..........22,23,factor of three.
+object NumbersandFactorofThree{
+  def main(args: Array[String]): Unit = {
+    for(i <- 1 to 24){
+      if (i % 3 == 0) {
+        print("factor of three")
+        if(i < 24){
+          print(", ")
+        }
+      } else {
+        print(s"$i,")
+      }
+    }
+    println()
+  }
+}
+
+//28. Write programs to print the following series. 1,3, divisible by five, 7,9,
+//11,13, divisible by five,.....21,23, divisible by five
+object CustomSeries {
+  def main(args: Array[String]): Unit = {
+    for (i <- 1 to 25 by 2) {
+      if (i % 5 == 0) {
+        print(" divisible by five")
+        if (i < 24) {
+          print(", ")
+        }
+      } else {
+        print(s"$i,")
+      }
+    }
+  }
+}
+
+//29. Write programs to print the following series. 0.5^2, 0.7^2,0.9^2....5.1^2
+object SeriesofDecimalCaret1 {
+  def main(args: Array[String]): Unit = {
+    for (i <- 0.5 to 5.1 by 0.2) {
+      val result = math.pow(i, 2)
+      print(f"$i%.1f^2")
+
+      if (i < 5.1) {
+        print(", ")
+      }
+    }
+  }
+}
+
+//30. Write a for loop that never ends?
+object InfiniteLoop {
+  def main(args: Array[String]): Unit = {
+    for (i <- 1 to Int.MaxValue) {
+      println("This loop that never ends!")
+    }
+  }
+}
+
+//31. Write a Loop inside other loop and observe the execution flow?
+object NestedLoop {
+  def main(args: Array[String]): Unit = {
+    for (i <- 1 to 3) {
+      println("Outer loop: i = " + i)
+
+      for (j <- 1 to 2) {
+        println("  Inner loop: j = " + j)
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
 
 
 
